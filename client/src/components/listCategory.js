@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 const ListCategory = (props) => {
     return (<div>
          <b>jjj</b>
@@ -16,4 +16,5 @@ const mapStateToProp = state => {
         list: state.categoryArr
     }
 }
-export default connect(mapStateToProp)(ListCategory);
+export default ListCategory;
+// export default connect(mapStateToProp)(ListCategory);

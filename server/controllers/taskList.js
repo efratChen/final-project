@@ -1,9 +1,7 @@
-const taskList = require("../models/taskList");
+const TaskList = require("../models/taskList");
 const mongoose = require("mongoose");
 //get all contents by categoryId (for auto-correct):
 //?
-// אתר מצוין!!!:
-// docs.mongodb.com
 const getByCategoryId = async (req, res) => {
     let { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id))

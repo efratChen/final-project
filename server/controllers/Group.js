@@ -1,4 +1,6 @@
-const Group = require("../models/Group");
+const Group = require("../models/group");
+const List = require("../models/List");
+const ListSharing = require("../models/ListSharing").model;
 const mongoose = require("mongoose");
 
 const getAll = async (req, res) => {

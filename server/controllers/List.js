@@ -1,6 +1,7 @@
-const Group = require("../models/Group");
-const List = require("../models/List");
-const taskList = require("../models/taskList");
+const Group = require("../models/group");
+const List = require("../models/list");
+const TaskList = require("../models/taskList");
+const ListSharing = require("../models/ListSharing").model;
 const mongoose = require("mongoose");
 
 const getAll = async (req, res) => {

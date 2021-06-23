@@ -1,9 +1,7 @@
-const mongoose = require('mongoose');
-
 const mongoose = require("mongoose");
-const ListNotesSchema = mongoose.Schema({
+const listNotesSchema = new mongoose.Schema({
     Note: {
-        type: String
+        type: mongoose.SchemaTypes.String, required: true
     },
     // //id user
     // User: {
@@ -11,5 +9,5 @@ const ListNotesSchema = mongoose.Schema({
     //     ref:'User'
     // }
 });
-const ListNotes=mongoose.model("ListNotes",ListNotesSchema);
+const ListNotes=mongoose.model("ListNotes",listNotesSchema);
 module.exports=ListNotes;

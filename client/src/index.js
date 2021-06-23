@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import thunk from 'redux-thunk';
-import reduce from './store/reducers';
+import 'semantic-ui-css/semantic.min.css';
+// import { Provider } from 'react-redux';
+// import { createStore } from 'redux';
+// import thunk from 'redux-thunk';
+// import reduce from './store/reducers';
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // const store = createStore(combineReducers({ cakesPart: cakeReducer }), composeEnhancers(
@@ -16,10 +17,10 @@ import reduce from './store/reducers';
 ReactDOM.render(
 
   <React.StrictMode>
-    <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+    {/* <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}> */}
 
       <App />
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
