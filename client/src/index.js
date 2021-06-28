@@ -17,10 +17,9 @@ import 'semantic-ui-css/semantic.min.css';
 ReactDOM.render(
 
   <React.StrictMode>
-    {/* <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}> */}
-
+    <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}></Provider>
       <App />
-    {/* </Provider> */}
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

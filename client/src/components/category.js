@@ -1,18 +1,16 @@
-const Category = (category) => {
+import { useEffect } from "react";
+
+const Category = () => {
+    useEffect(()=>{
+
+    },[])
     return (<>
-    <form class="ui form">
-        <div class="field">
-            <label>First Name</label>
-            <input type="text" name="first-name" placeholder="First Name"></input
-        ></div>
-    </form>
+    all categories
     </>);
 }
 
 {/* <div>
         <h1>{category.name}</h1>
 
-
-        
     </div> */}
 export default Category;
