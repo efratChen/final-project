@@ -2,10 +2,6 @@ const taskList = require("./taskList");
 const ListNotes = require("./listNotes");
 const listOpinion = require("./listOpinion");
 const mongoose = require("mongoose");
-mongoose.connect("").then(x => {
-    console.log("connected to mongo");
-
-}).catch(err => console.log(err.message));
 
 const listSchema = new mongoose.Schema({
     //?

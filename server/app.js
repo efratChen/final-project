@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const category = require("./routes/category");
+const group = require("./routes/group");
+
 const user = require("./routes/user");
 
 
@@ -15,8 +17,10 @@ const app = express();
 
 app.use(express.json());
 //app.use("/user",user)
-app.use("/category", category)
-app.listen("5000", () => {
+app.use("/category", category);
+app.use("/group", group);
+
+app.listen("6000", () => {
     console.log("listening on port 5000");
 })
 // רק בפעם הראשונה 

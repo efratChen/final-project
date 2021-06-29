@@ -8,6 +8,13 @@ const getAll = async (req, res) => {
     let lists = await List.find();
     return res.send(lists);
 }
+//#region 
+
+
+
+
+
+
 
 const getById = async (req, res) => {
     let { id } = req.params;
@@ -18,6 +25,7 @@ const getById = async (req, res) => {
         return res.status(404).send("מצטערים לא נמצאה רשימה עם המזהה שהתקבל");
     return res.send(list);
 }
+//#endregion
 
 // const addGroup = async (req, res) => {
 //     let group = req.body;

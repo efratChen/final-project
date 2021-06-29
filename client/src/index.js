@@ -4,6 +4,8 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
+import { createStore, applyMiddleware } from 'redux';
+
 // import { Provider } from 'react-redux';
 // import { createStore } from 'redux';
 // import thunk from 'redux-thunk';
@@ -14,15 +16,15 @@ import 'semantic-ui-css/semantic.min.css';
 
   // applyMiddleware(thunk))
 // )
-ReactDOM.render(
+// ReactDOM.render(
 
-  <React.StrictMode>
-    <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}></Provider>
-      <App />
+//   <React.StrictMode>
+//     <Provider store={createStore(reduce,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}></Provider>
+// <App />
   
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

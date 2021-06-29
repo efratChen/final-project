@@ -2,11 +2,17 @@ const Group = require("../models/group");
 const List = require("../models/List");
 //const ListSharing = require("../models/ListSharing").model;
 const mongoose = require("mongoose");
+//#region Get
 
 const getAll = async (req, res) => {
     // let cakes = await Cake.find().populate({ path: "cheff", select: "name sallary -_id" });
-    // return res.send(cakes);
+    //?
+    let groups = await Group.find();
+    return res.send(groups);
 }
+
+//#endregion
+
 const getById = async (req, res) => {
     let { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id))
@@ -51,7 +57,6 @@ const deleteGroup = async (req, res) => {
         return res.status(404).send("מצטערים לא נמצאה קבוצה עם המזהה שהתקבל");
     return res.send(deleted);
 }
-
 module.exports = {
-    getById, deleteGroup
+    getById, deleteGroup, getAll
 }

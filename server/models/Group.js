@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-mongoose.connect("").then(x => {
-    console.log("connected to mongo");
-
-}).catch(err => console.log(err.message));
 
 const groupSchema = new mongoose.Schema({
 

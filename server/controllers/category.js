@@ -1,11 +1,15 @@
 const Category = require("../models/category");
 const mongoose = require("mongoose");
-
+//#region Get
 const getAll = async (req, res) => {
-    let categorys = await Category.find();
-    return res.send(categorys);
+    try {
+        let categorys = await Category.find();
+        return res.send(categorys);
+    }
+    catch (err) {
+        return res.status(400).send(err.message)
+    }
 }
-
 const getById = async (req, res) => {
     let { id } = req.params;
     let category = await Category.findById(id);
@@ -19,17 +23,17 @@ const getById = async (req, res) => {
     //     return res.status(404).send("מצטערים לא נמצאה תוכן עם המזהה שהתקבל");
     // return res.send(contentList);
 }
-
 const getByName = async (req, res) => {
-    let n  = req.params.name;
-    let category = await Category.find({name:n });
+    let n = req.params.name;
+    let category = await Category.find({ name: n });
     if (!category)
         return res.status(404).send("sorry the name is not exists!");
     return res.send(category);
 }
-
+//#endregion
+//#region Post
 // להוסיף קטגוריה לתת אפשרות רק למנהל
-const addCategory = async (req, res) => {
+const postCategory = async (req, res) => {
     let category = req.body;
     let newCategory = new Category(category);
     try {
@@ -40,7 +44,7 @@ const addCategory = async (req, res) => {
         return res.status(400).send(err.message)
     }
 }
-
+//#endregion
 module.exports = {
-    getByName ,getById, getAll, addCategory
+    getByName, getById, getAll, postCategory
 }
