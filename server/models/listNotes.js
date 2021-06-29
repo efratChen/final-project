@@ -9,5 +9,5 @@ const listNotesSchema = new mongoose.Schema({
     //     ref:'User'
     // }
 });
-const ListNotes=mongoose.model("ListNotes",listNotesSchema);
-module.exports=ListNotes;
+const ListNotes = mongoose.model("ListNotes", listNotesSchema);
+module.exports = ListNotes;

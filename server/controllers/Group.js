@@ -1,6 +1,6 @@
 const Group = require("../models/group");
 const List = require("../models/List");
-const ListSharing = require("../models/ListSharing").model;
+//const ListSharing = require("../models/ListSharing").model;
 const mongoose = require("mongoose");
 
 const getAll = async (req, res) => {
@@ -53,5 +53,5 @@ const deleteGroup = async (req, res) => {
 }
 
 module.exports = {
-    getById, addGroup, deleteGroup, updateCake
+    getById, deleteGroup
 }

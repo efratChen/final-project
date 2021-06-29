@@ -1,8 +1,9 @@
 const express = require("express");
-const route=express.Router();
-const groupController=require("../controllers/group");
+const route = express.Router();
+const categoeryController = require("../controllers/Category");
 
-route.get("/:id",groupController.getById)
-route.get("/",groupController.getAll)
-module.exports=route;
- 
+route.get("/:id", categoeryController.getById);
+route.get("", categoeryController.getAll);
+route.get("/byName/:name", categoeryController.getByName);
+route.post("/add",categoeryController.addCategory);
+module.exports = route;

@@ -1,12 +1,13 @@
 const ListNotes = require("../models/listNotes");
 const mongoose = require("mongoose");
-const getAll = async (req, res) => {
-    let listNotes = await listNotes.find();
-    return res.send(listNotes);
-}
+
+// const getAll = async (req, res) => {
+//     let listNotes = await listNotes.find();
+//     return res.send(listNotes);
+// }
 //ok
 //hi rivka just for checking
-const addNote= async (req, res) => {
+const addNote = async (req, res) => {
     let listNotes = req.body;
     let newlistNotes = new listNotes(listNotes);
     try {
@@ -18,5 +19,5 @@ const addNote= async (req, res) => {
     }
 }
 module.exports = {
-    getAll, addNote
+    addNote
 }

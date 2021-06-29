@@ -1,6 +1,6 @@
 const taskList = require("./taskList");
-const ListNotes = require("./ListNotes");
-const ListOpinion = require("./ListOpinion");
+const ListNotes = require("./listNotes");
+const listOpinion = require("./listOpinion");
 const mongoose = require("mongoose");
 mongoose.connect("").then(x => {
     console.log("connected to mongo");
@@ -9,13 +9,13 @@ mongoose.connect("").then(x => {
 
 const listSchema = new mongoose.Schema({
     //?
-    category :{
+    category: {
         type: String,
         required: true
     },
-    group :{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Group'
+    group: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Group'
     },
     levelSharing: {
         type: Number,
@@ -27,20 +27,20 @@ const listSchema = new mongoose.Schema({
         min: 0,
         max: 1
     },
-    user :{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'User'
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     //date
     name: String,
-    ListContent: {
-        type: [taskList], required: true
-    },
-    Opinions: [ListOpinion],    
-    Notes: [ListNotes], 
+    // ListContent: {
+    //     type: [taskList], required: true
+    // },
+    //Opinions: [listOpinion],
+    //Notes: [ListNotes],
 });
 const List = mongoose.model('List', listSchema);
-module.exports=List;
+module.exports = List;
 
 
 

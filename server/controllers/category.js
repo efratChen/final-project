@@ -8,9 +8,9 @@ const getAll = async (req, res) => {
 
 const getById = async (req, res) => {
     let { id } = req.params;
-    let category=await Category.findById(id);
-    if(!category)
-    return res.status(404).send("sorry the id iyou have been enter not valid!");
+    let category = await Category.findById(id);
+    if (!category)
+        return res.status(404).send("sorry the id iyou have been enter not valid!");
     return res.send(category);
     // if (!mongoose.Types.ObjectId.isValid(id))
     //     return res.status(404).send("המזהה קטגוריה שהתקבל אינו תקין");
@@ -19,6 +19,28 @@ const getById = async (req, res) => {
     //     return res.status(404).send("מצטערים לא נמצאה תוכן עם המזהה שהתקבל");
     // return res.send(contentList);
 }
+
+const getByName = async (req, res) => {
+    let n  = req.params.name;
+    let category = await Category.find({name:n });
+    if (!category)
+        return res.status(404).send("sorry the name is not exists!");
+    return res.send(category);
+}
+
+// להוסיף קטגוריה לתת אפשרות רק למנהל
+const addCategory = async (req, res) => {
+    let category = req.body;
+    let newCategory = new Category(category);
+    try {
+        await newCategory.save();
+        return res.send(newCategory);
+    }
+    catch (err) {
+        return res.status(400).send(err.message)
+    }
+}
+
 module.exports = {
-    getById, getAll
+    getByName ,getById, getAll, addCategory
 }
