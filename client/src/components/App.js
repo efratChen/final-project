@@ -65,16 +65,16 @@ const App = (props) => {
         <Typography component="h1" variant="h2">
           Todos
       </Typography>
-        <TodoForm
+        {/* <TodoForm
           saveTodo={todoText => {
             const trimmedText = todoText.trim();
             if (trimmedText.length > 0) {
               addTodo(trimmedText);
             }
           }}
-        />
+        /> */}
 
-        <TodoList todos={todos} deleteTodo={deleteTodo} />
+        {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
 
         {/* <AddToDo Addtodo={Addtodo}/> */}
         <FixedMenuLayout />

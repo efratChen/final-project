@@ -1,3 +1,4 @@
+import { NoEncryption } from '@material-ui/icons';
 import React from 'react'
 import {
   Container,
@@ -10,13 +11,15 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
+import logo from './logo.jpg'; // Tell webpack this JS file uses this image
 
 const FixedMenuLayout = () => (
-  <div>
-    <Menu fixed='top' inverted>
-      <Container>
+  <div >
+    {/* style={{backgroundColor:"white"}} */}
+    <Menu fixed='top' inverted >
+      <Container  >
         <Menu.Item as='a' header>
-          <Image size='mini' src='/logo.png' style={{ marginRight: '1.5em' }} />
+          <Image size='mini' src={logo} />
           Project Name
         </Menu.Item>
         <Menu.Item as='a'>Home</Menu.Item>
@@ -61,6 +64,19 @@ const FixedMenuLayout = () => (
     </Menu>
 
     <Container text style={{ marginTop: '7em' }}>
+      <div class="ui items">
+        <div class="item">  <a class="ui fluid image">      <Image size='mini' src={logo} />
+        </a>
+          <div class="content">
+            <a class="header">Cute Dog</a>
+            <div class="description">
+              <p>should get
+                stuff done.</p>
+              <p>Many people also have their own barometers for what makes a cute dog.</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <Header as='h1'>Semantic UI React Fixed Template</Header>
       <p>This is a basic fixed menu template using fixed size containers.</p>
       <p>
@@ -114,11 +130,11 @@ const FixedMenuLayout = () => (
         </Grid>
 
         <Divider inverted section />
-        <Image centered size='mini' src='/logo.png' />
+        <Image centered size='mini' src={logo} />
         <List horizontal inverted divided link size='small'>
-          <List.Item as='a' href='#'>
+          <List.Item as='a' href='#' >
             Site Map
-          </List.Item>
+          </List.Item >
           <List.Item as='a' href='#'>
             Contact Us
           </List.Item>
