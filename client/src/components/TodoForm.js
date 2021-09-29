@@ -7,7 +7,6 @@ const TodoForm = ({ saveTodo }) => {
   const filterTodoList = () => {
     console.log("from filterTodoList");
   }
-  
   return (
     <form
       onSubmit={event => {

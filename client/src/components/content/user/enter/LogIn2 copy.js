@@ -4,7 +4,7 @@ import { Link, Route } from 'react-router-dom';
 
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
-const LoginForm2 = () => (
+const LoginForm = () => (
   <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
     <Grid.Column style={{ maxWidth: 450 }}>
       <Header as='h2' color='teal' textAlign='center'>
@@ -38,4 +38,4 @@ const LoginForm2 = () => (
     </Grid.Column>
   </Grid>
 )
-export default LoginForm2
+export default LoginForm

@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import Lists from './content/Lists';
+import Category from "./content/Category";
 import LogIn from './content/user/enter/LogIn';
 import LoginForm from './content/user/enter/LogIn2';
 import SignUp from './content/user/enter/SignUp';
 import FixedMenuLayout from './header/Header';
 import AddToDo from './content/AddToDo';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-
-
 
 
 
@@ -60,12 +59,11 @@ const App = (props) => {
   // }
   //#endregion
   return (<>
-    <Router>
-      <div className="App">
-        <Typography component="h1" variant="h2">
+    <div className="App">
+      {/*  <Typography component="h1" variant="h2">
           Todos
       </Typography>
-        {/* <TodoForm
+        <TodoForm
           saveTodo={todoText => {
             const trimmedText = todoText.trim();
             if (trimmedText.length > 0) {
@@ -73,17 +71,15 @@ const App = (props) => {
             }
           }}
         /> */}
-
-        {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
-
-        {/* <AddToDo Addtodo={Addtodo}/> */}
-        <FixedMenuLayout />
-        {/* <LoginForm/> */}
-        {/* <SignUp/> */}
-        {/* <LogIn /> */}
-        {/* <Lists allLists={allLists} markComplete={markComplete} delTodo={delTodo}/> */}
-      </div>
-    </Router>
+      {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
+      {/* <AddToDo Addtodo={Addtodo}/> */}
+      <FixedMenuLayout />
+      {/* <Category /> */}
+      <LoginForm/>
+      {/* <SignUp/> */}
+      {/* <LogIn /> */}
+      {/* <Lists allLists={allLists} markComplete={markComplete} delTodo={delTodo}/> */}
+    </div>
   </>)
 }
 
