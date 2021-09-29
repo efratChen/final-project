@@ -42,6 +42,8 @@ const FixedMenuLayout = () => (
                 <Dropdown.Item>פורים</Dropdown.Item>
                 <Dropdown.Item>פסח</Dropdown.Item>
                 <Dropdown.Item>שבועות</Dropdown.Item>
+                <Dropdown.Item>חתונה</Dropdown.Item>
+
               </Dropdown.Menu>
             </Dropdown.Item>
             {/* 2תת רשימה */}
