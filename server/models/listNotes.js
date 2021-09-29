@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const listNotesSchema = new mongoose.Schema({
-    Note: {
-        type: mongoose.SchemaTypes.String, required: true
+    note: {
+        type: mongoose.SchemaTypes.String,
+        required: true
     },
     // //id user
     // User: {

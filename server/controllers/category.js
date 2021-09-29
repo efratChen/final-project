@@ -1,6 +1,7 @@
 const Category = require("../models/category");
 const mongoose = require("mongoose");
-//#region Get
+
+//#region GET
 const getAll = async (req, res) => {
     try {
         let categorys = await Category.find();
@@ -23,6 +24,7 @@ const getById = async (req, res) => {
     //     return res.status(404).send("מצטערים לא נמצאה תוכן עם המזהה שהתקבל");
     // return res.send(contentList);
 }
+
 const getByName = async (req, res) => {
     let n = req.params.name;
     let category = await Category.find({ name: n });
@@ -30,10 +32,9 @@ const getByName = async (req, res) => {
         return res.status(404).send("sorry the name is not exists!");
     return res.send(category);
 }
-//#endregion
-//#region Post
+
 // להוסיף קטגוריה לתת אפשרות רק למנהל
-const postCategory = async (req, res) => {
+const addCategory = async (req, res) => {
     let category = req.body;
     let newCategory = new Category(category);
     try {
@@ -45,6 +46,20 @@ const postCategory = async (req, res) => {
     }
 }
 //#endregion
+//PUT ?
+//#region DELETE
+// למחוק קטגוריה לתת אפשרות רק למנהל
+const deleteCategory = async (req, res) => {
+    let { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id))
+        return res.status(404).send("המזההה שהתקבל אינו תקין");
+    let deleted = await Category.findByIdAndRemove(id);
+    console.log(deleted);
+    if (!deleted)
+        return res.status(404).send("מצטערים לא נמצאה קבוצה עם המזהה שהתקבל");
+    return res.send(deleted);
+}
+//#endregion
 module.exports = {
-    getByName, getById, getAll, postCategory
+    getByName, getById, getAll, addCategory, deleteCategory
 }

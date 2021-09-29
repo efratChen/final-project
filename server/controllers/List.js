@@ -1,55 +1,18 @@
 const Group = require("../models/group");
 const List = require("../models/list");
 const TaskList = require("../models/taskList");
-const ListSharing = require("../models/ListSharing").model;
+// const ListSharing = require("../models/ListSharing").model;
 const mongoose = require("mongoose");
 
-const getAll = async (req, res) => {
-    let lists = await List.find();
-    return res.send(lists);
-}
-//#region 
-
-
-
-
-
-
-
-const getById = async (req, res) => {
+const getByIdCategory = async (req, res) => {
     let { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id))
         return res.status(404).send("המזההה שהתקבל אינו תקין");
-    let list = await List.findById(id);
+    let list = await List.schema.category.findById(id);
     if (!list)
         return res.status(404).send("מצטערים לא נמצאה רשימה עם המזהה שהתקבל");
     return res.send(list);
 }
-//#endregion
-
-// const addGroup = async (req, res) => {
-//     let group = req.body;
-//     let newGroup = new Group(group);
-//     let cheff = await Cheff.findById(group.cheff);
-//     if (!cheff)
-//         return res.status(404).send("מצטערים לא נמצא שף עם המזהה שהתקבל");
-//     try {
-//         await newCake.save();
-//         let ing = newCake.ingredients;
-//         console.log(newCake)
-//         // ing.forEach(async (item) => {
-//         //     let newIng = new Ingredients(item);
-//         //     newIng._id=item._id;
-//         //     await newIng.save();
-//         //     console.log(newIng);
-//         // })
-//         return res.send(newCake);
-//     }
-//     catch (err) {
-//         return res.status(400).send(err.message)
-//     }
-// }
-
 
 const deleteList = async (req, res) => {
     let { id } = req.params;
@@ -62,6 +25,17 @@ const deleteList = async (req, res) => {
     return res.send(deleted);
 }
 
+const addList = async (req, res) => {
+    let list = req.body;
+    let newList = new List(list);
+    try {
+        await newList.save();
+        return res.send(newList);
+    }
+    catch (err) {
+        return res.status(400).send(err.message)
+    }
+}
 module.exports = {
-    getAll, getById, addGroup, deleteGroup, updateCake
+    getByIdCategory, addList, deleteList
 }

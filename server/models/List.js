@@ -3,7 +3,7 @@ const ListNotes = require("./listNotes");
 const listOpinion = require("./listOpinion");
 const mongoose = require("mongoose");
 
-const listSchema = new mongoose.Schema({
+ const listSchema = new mongoose.Schema({
     //?
     category: {
         type: String,

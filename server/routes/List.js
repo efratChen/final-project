@@ -2,7 +2,7 @@ const express = require("express");
 const route=express.Router();
 const listController=require("../controllers/list");
 
-route.get("/:id",listController.getById)
-route.post("/",listController.addCake)
-route.delete("/:id",listController.deleteCake)
+route.get("/:id",listController.getByIdCategory)
+route.post("/",listController.addList)
+route.delete("/delete/:id",listController.deleteList)
 module.exports=route;

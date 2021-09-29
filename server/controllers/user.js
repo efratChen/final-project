@@ -1,21 +1,35 @@
-const User = require("../models/chef");
+const User = require("../models/user");
 const mongoose = require("mongoose");
+//#region GET
 const getAll = async (req, res) => {
-    let Users = await User.find();
-    return res.send(Users);
+    try {
+        let users = await User.find();
+        return res.send(users);
+    }
+    catch (err) {
+        return res.status(400).send(err.message)
+    }
 }
+
 const getById = async (req, res) => {
     let { id } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(id))
-        return res.status(404).send("user id is Invalid");
-    let User = await User.findById(id);
-    if (!User)
-        return res.status(404).send("מצטערים לא נמצאה משתמש עם המזהה שהתקבל");
-    return res.send(User);
+    let user = await User.findById(id);
+    if (!user)
+        return res.status(404).send("sorry the id iyou have been enter not valid!");
+    return res.send(user);
 }
-const addUser= async (req, res) => {
-    let User = req.body;
-    let newUser = new User(User);
+const getByName = async (req, res) => {
+    let n = req.params.name;
+    let user = await User.find({ name: n });
+    if (!user)
+        return res.status(404).send("sorry the name is not exists!");
+    return res.send(user);
+}
+//#endregion
+//#region POST
+const postUser= async (req, res) => {
+    let user = req.body;
+    let newUser = new User(user);
     try {
         await newUser.save();
         return res.send(newUser);
@@ -24,6 +38,23 @@ const addUser= async (req, res) => {
         return res.status(400).send(err.message)
     }
 }
+//#endregion
+//#region PUT?
+
+//#endregion
+//#region DELETE
+//  לתת אפשרות רק למנהל
+const deleteUser = async (req, res) => {
+    let { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("המזההה שהתקבל אינו תקין");
+    let deleted = await User.findByIdAndRemove(id);
+    console.log(deleted);
+    if (!deleted)
+        return res.status(404).send("מצטערים לא נמצאה קבוצה עם המזהה שהתקבל");
+    return res.send(deleted);
+}
+//#endregion
 module.exports = {
-    getAll, getById,addUser
+    getAll, getById, postUser, getByName, deleteUser
 }

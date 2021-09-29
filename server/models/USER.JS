@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
-    Name: {
+    name: {
         type: mongoose.SchemaTypes.String, required: true
     },
-    Mail: {
+    mail: {
         // type: mongoose.SchemaTypes.String, required: true
      
             type: String,
@@ -12,11 +12,10 @@ const userSchema = new mongoose.Schema({
             unique: true,
             message: '{VALUE} is not supported'
         },
-    Password: {
+    password: {
         type: mongoose.SchemaTypes.String, required: true
     },
-    OpinionDate: Date,
-    
+     opinionDate: Date
 });
 const User=mongoose.model("User",userSchema);
 module.exports=User;
