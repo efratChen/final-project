@@ -7,7 +7,6 @@ const list = require("./routes/list");
 const listNotes = require("./routes/listNotes");
 const morgan = require("morgan")
 // const user = require("./routes/user");
-
 const { addUser } = require("./controllers/user");
 
 mongoose.connect("mongodb://localhost:27017/list").then(() => {
@@ -36,7 +35,7 @@ app.get('/express_backend',(req,res)=>{
     res.send({express: 'xxxx'})
 });
 
-app.listen(process.env.PORT || "5000", () => {
+app.listen(process.env.PORT || "3000", () => {
     console.log("listening on port 5000");
 })
 
