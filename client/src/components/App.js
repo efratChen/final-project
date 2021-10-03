@@ -74,8 +74,8 @@ const App = (props) => {
       {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
       {/* <AddToDo Addtodo={Addtodo}/> */}
       <FixedMenuLayout />
-      {/* <Category /> */}
-      <LoginForm/>
+      <Category />
+      {/* <LoginForm/> */}
       {/* <SignUp/> */}
       {/* <LogIn /> */}
       {/* <Lists allLists={allLists} markComplete={markComplete} delTodo={delTodo}/> */}
