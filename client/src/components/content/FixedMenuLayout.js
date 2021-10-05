@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Link, Switch } from 'react-router-dom';
-import About from '../content/About'
+import About from './About'
+import Home from './user/enter/Home';
 import {
   Container,
   Divider,
@@ -12,36 +13,30 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
-import logo from './logo.png'
-import Category from '../content/Category';
-
+import logo from '../content/logo.png'
+import Category from './Category';
 const FixedMenuLayout = () => (
   <div>
     <Router>
       <Menu fixed='top' inverted>
         <Container>
           <Menu.Item as='a' header>
-            <Image size='mini'  src={logo}  style={{ marginRight: '1.5em' }} />
-            <div>new</div>
-          TO DO LIST PROJECT
-        </Menu.Item>
+            <Image size='mini' src={logo} style={{ marginRight: '1.5em' }} />
+            TO DO LIST PROJECT
+          </Menu.Item>
           <Link to="/">
             <Menu.Item as='a'>Home</Menu.Item>
           </Link>
-          <Route exact path="/" component={Header} />
+          <Route path="/" component={Header} />
           {/* </Route> */}
-
           <Link to="/about">
             <Menu.Item as='a'>About</Menu.Item>
           </Link>
           <Route path="/about" component={About}>
-            {/* <About /> */}
           </Route>
-
           <Dropdown item simple text='Categories'>
             <Dropdown.Menu>
-              <Category />
-              <Dropdown.Item>שבת</Dropdown.Item>
+              <Dropdown.Item> <Category /> </Dropdown.Item>
               <Dropdown.Item>קניות</Dropdown.Item>
               <Dropdown.Item>משימות</Dropdown.Item>
               <Dropdown.Divider />
@@ -79,33 +74,7 @@ const FixedMenuLayout = () => (
       </Menu>
     </Router>
     {/* תוכן משתנה - באמצע */}
-    <Container text style={{ marginTop: '7em' }}>
-      <div class="ui items">
-        <div class="item">  <a class="ui fluid image">      <Image size='mini' src={logo} />
-        </a>
-          <div class="content">
-            <a class="header">Cute Dog</a>
-            <div class="description">
-              <p>should get
-                stuff done.</p>
-              <p>Many people also have their own barometers for what makes a cute dog.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <Header as='h1'>Semantic UI React Fixed Template</Header>
-      <p>This is a basic fixed menu template using fixed size containers.</p>
-      <p>
-        A text container is used for the main container, which is useful for single column layouts.
-      </p>
-      <Image src='/images/wireframe/media-paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-      <Image src='/images/wireframe/paragraph.png' style={{ marginTop: '2em' }} />
-    </Container>
+    <Home />
     {/* FOOTER */}
     <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
       <Container textAlign='center'>
@@ -146,7 +115,7 @@ const FixedMenuLayout = () => (
         </Grid>
 
         <Divider inverted section />
-        <Image centered size='mini'  src={logo} />
+        <Image centered size='mini' src={logo} />
         <List horizontal inverted divided link size='small'>
           <List.Item as='a' href='#'>
             Site Map

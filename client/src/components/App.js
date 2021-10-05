@@ -5,12 +5,9 @@ import Category from "./content/Category";
 import LogIn from './content/user/enter/LogIn';
 import LoginForm from './content/user/enter/LogIn2';
 import SignUp from './content/user/enter/SignUp';
-import FixedMenuLayout from './header/Header';
+import FixedMenuLayout from './content/FixedMenuLayout';
 import AddToDo from './content/AddToDo';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-
-
-
 // 1
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -74,7 +71,6 @@ const App = (props) => {
       {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
       {/* <AddToDo Addtodo={Addtodo}/> */}
       <FixedMenuLayout />
-      <Category />
       {/* <LoginForm/> */}
       {/* <SignUp/> */}
       {/* <LogIn /> */}
@@ -140,8 +136,7 @@ export default App;
 //       {/* soon it will be modal fall down */}
 //       <Route exact path={["/","/LogIn"]} component={HomePage}>
 //       </Route>
-//       <Route path="/Category" component={Category}>
-//       </Route>
+//       <Route path="/Category" component={Category}>     </Route>
 
 //     </Switch>
 //   // </Router>

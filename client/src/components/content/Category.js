@@ -3,7 +3,17 @@ import { Component, useEffect, useState } from "react";
 // import { getCategory } from 'D:/Users/User/Desktop/תכנות שנה ב/Project/from git/final-project/client/src/store/actions/category.js';
 import { connect } from "react-redux";
 import axios from "axios";
-
+import {
+    Container,
+    Divider,
+    Dropdown,
+    Grid,
+    Header,
+    Image,
+    List,
+    Menu,
+    Segment,
+} from 'semantic-ui-react'
 export default class Category extends Component {
     // constructor(props) {
     //     super(props);
@@ -26,14 +36,14 @@ export default class Category extends Component {
     //         return (<div>{i} {data.name} </div>);
     //     });
     // }
-
     render() {
         return (<>
-            <h1>categoryCollection</h1>
-            <ul>
-                {this.state.categoryCollection.map(category => <li>{category.name}</li>)}
-            </ul>     
-            
+            <h3>category work</h3>
+            {this.state.categoryCollection.map(category =>
+                <p>
+                    {category.name}
+                </p>
+            )}
         </>
             //     <div className="wrapper-users">
             //         <div className="container">
