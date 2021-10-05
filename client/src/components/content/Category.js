@@ -32,8 +32,8 @@ export default class Category extends Component {
             <h1>categoryCollection</h1>
             <ul>
                 {this.state.categoryCollection.map(category => <li>{category.name}</li>)}
-            </ul>
-
+            </ul>     
+            
         </>
             //     <div className="wrapper-users">
             //         <div className="container">
