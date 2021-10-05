@@ -22,6 +22,7 @@ const FixedMenuLayout = () => (
         <Container>
           <Menu.Item as='a' header>
             <Image size='mini'  src={logo}  style={{ marginRight: '1.5em' }} />
+            <div>new</div>
           TO DO LIST PROJECT
         </Menu.Item>
           <Link to="/">
