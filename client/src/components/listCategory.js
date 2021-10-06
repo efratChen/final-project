@@ -1,10 +1,10 @@
 // import { connect } from 'react-redux';
 const ListCategory = (props) => {
     return (<div>
-         <b>jjj</b>
+        <h1> ListCategory work</h1>
         {props.list.map((item) => {
             return (<div key={item.id}>
-               
+
                 <b>{item.name}</b>
             </div>
             )

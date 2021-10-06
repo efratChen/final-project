@@ -9,8 +9,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import * as actionTypes from '../store/actionTypes';
 
 const TodoList = ({ todos, deleteTodo }) => (
-  
-  
   <List>
     {todos.map((todo, index) => (
       <ListItem key={index.toString()} dense button>
