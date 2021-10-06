@@ -48,6 +48,7 @@ const addCategory = async (req, res) => {
 //#endregion
 //PUT ?
 //#region DELETE
+
 // למחוק קטגוריה לתת אפשרות רק למנהל
 const deleteCategory = async (req, res) => {
     let { id } = req.params;
@@ -60,6 +61,7 @@ const deleteCategory = async (req, res) => {
     return res.send(deleted);
 }
 //#endregion
+
 module.exports = {
     getByName, getById, getAll, addCategory, deleteCategory
 }

@@ -14,7 +14,7 @@ const LoginForm2 = () => (
       </Header>
       <Form size='large'>
         <Segment stacked>
-          <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
+          <Form.Input fluid icon='user' iconPosition='left' placeholder='user name' />
           <Form.Input
             fluid
             icon='lock'

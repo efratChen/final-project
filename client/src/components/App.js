@@ -2,13 +2,14 @@ import { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import Lists from './content/Lists';
 import Category from "./content/Category";
-import LogIn from './content/user/enter/LogIn';
+import LogIn from './content/user/enter/LogIn2';
 import LoginForm from './content/user/enter/LogIn2';
 import SignUp from './content/user/enter/SignUp';
 import FixedMenuLayout from './content/FixedMenuLayout';
 import AddToDo from './content/AddToDo';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 // 1
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Typography from '@material-ui/core/Typography';
@@ -71,6 +72,7 @@ const App = (props) => {
       {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
       {/* <AddToDo Addtodo={Addtodo}/> */}
       <FixedMenuLayout />
+      <LogIn/>
       {/* <LoginForm/> */}
       {/* <SignUp/> */}
       {/* <LogIn /> */}
