@@ -9,7 +9,6 @@ import FixedMenuLayout from './content/FixedMenuLayout';
 import AddToDo from './content/AddToDo';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 // 1
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Typography from '@material-ui/core/Typography';

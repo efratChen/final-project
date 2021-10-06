@@ -30,7 +30,6 @@ export default class Category extends Component {
                 console.log(error);
             })
     }
-
     // getCategory() {
     //     return this.state.categoryCollection.map((data, i) => {
     //         return (<div>{i} {data.name} </div>);
