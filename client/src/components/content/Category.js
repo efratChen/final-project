@@ -20,16 +20,16 @@ export default class Category extends Component {
     //     this.state = { categoryCollection: [] };
     // }
     state = { categoryCollection: [] }
-    componentDidMount() {
-        axios.get('http://localhost:3000/category')
-            .then(res => {
-                const categoryCollection = res.data;
-                this.setState({ categoryCollection });
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }
+    // componentDidMount() {
+    //     axios.get('http://localhost:3000/category')
+    //         .then(res => {
+    //             const categoryCollection = res.data;
+    //             this.setState({ categoryCollection });
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         })
+    // }
     // getCategory() {
     //     return this.state.categoryCollection.map((data, i) => {
     //         return (<div>{i} {data.name} </div>);

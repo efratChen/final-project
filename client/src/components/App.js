@@ -3,7 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import Lists from './content/Lists';
 import Category from "./content/Category";
 import LogIn from './content/user/enter/LogIn2';
-import LoginForm from './content/user/enter/LogIn2';
+import LoginForm2 from './content/user/enter/LogIn2';
 import SignUp from './content/user/enter/SignUp';
 import FixedMenuLayout from './content/FixedMenuLayout';
 import AddToDo from './content/AddToDo';
@@ -68,13 +68,13 @@ const App = (props) => {
             }
           }}
         /> */}
+         <FixedMenuLayout />
       {/* <TodoList todos={todos} deleteTodo={deleteTodo} /> */}
       {/* <AddToDo Addtodo={Addtodo}/> */}
-      <FixedMenuLayout />
-      <LogIn/>
-      {/* <LoginForm/> */}
+      {/* <FixedMenuLayout />
+      // <LogIn/> */}
       {/* <SignUp/> */}
-      {/* <LogIn /> */}
+      {/* <LogIn2 /> */}
       {/* <Lists allLists={allLists} markComplete={markComplete} delTodo={delTodo}/> */}
     </div>
   </>)

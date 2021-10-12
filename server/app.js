@@ -35,7 +35,10 @@ app.get('/express_backend',(req,res)=>{
     res.send({express: 'xxxx'})
 });
 
-app.listen(process.env.PORT || "3000", () => {
+// app.listen(process.env.PORT || "3000", () => {
+//     console.log("listening on port 5000");
+// })
+app.listen(process.env.PORT || "5000", () => {
     console.log("listening on port 5000");
 })
 

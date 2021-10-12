@@ -14,7 +14,7 @@ const LoginForm2 = () => (
       </Header>
       <Form size='large'>
         <Segment stacked>
-          <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' />
+          <Form.Input fluid icon='user' iconPosition='left' placeholder='user name' />
           <Form.Input
             fluid
             icon='lock'
@@ -29,11 +29,11 @@ const LoginForm2 = () => (
       </Form>
       <Message>
         New to us? 
-        {/* ?TODO go to  SignUp*/}
-        {/* <a href='/SignUp'>Sign Up</a>
-        <Route path="/login/SignUp"> 
+        {/* ?TODO go to  SignUp} */}
+        <a href='/SignUp'>Sign Up</a>
+        {/* <Route path="/login/SignUp">  */}
                  <SignUp /> 
-            </Route> */}
+            {/* </Route> */}
       </Message>
     </Grid.Column>
   </Grid>

@@ -1,0 +1,22 @@
+todos  lists
+todo   list  - delete , edit, send ...
+itemInList  
+FixedMenuLayout - header and footer 
+
+===backend===:node.js:
+install:
+body parser     \  parse the requests
+cookie parser   /
+express  
+node mailer - send emails
+concurrency - turn on front-end and backend together at the same time
+nodemone - update the code in real time
+http-proxy-middleare - connect our frontend and backend 
+axios -make api calls, request and send our request to backend
+cors
+npm install body-parser cookie-parser express nodemailer --save 
+npm install concurrently nodemon --save-dev
+===frontend===:react:
+for nodemailer:
+npm install axios http-proxy-middleware --save
+

@@ -15,6 +15,8 @@ import {
 } from 'semantic-ui-react'
 import logo from '../content/logo.png'
 import Category from './Category';
+import SignUp from './user/enter/SignUp';
+import LoginForm2 from './user/enter/LogIn2';
 const FixedMenuLayout = () => (
   <div>
     <Router>
@@ -75,6 +77,8 @@ const FixedMenuLayout = () => (
     </Router>
     {/* תוכן משתנה - באמצע */}
     <Home />
+    <LoginForm2/>
+
     {/* FOOTER */}
     <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
       <Container textAlign='center'>
