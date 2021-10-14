@@ -1,9 +1,0 @@
-export const ALL_FILTER="ALL_FILTER";
-export const ACTIVE_FILTER="ACTIVE_FILTER";
-export const COMPLETED_FILTER="COMPLETED_FILTER";
-
-export const ADD_TODO_ACTION="ADD_TODO_ACTION";
-export const REMOVE_TODO_ACTION="ADD_TODO_ACTION";
-export const UPDATE_TODO_ACTION="ADD_TODO_ACTION";
-
-export const GET="GET";
